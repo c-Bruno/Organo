@@ -6,10 +6,15 @@ const CampoTexto = (props) => {
     // React nos entrega implicitamente um parâmetro chamado props, que são as propriedades que esse componente recebeu. 
 
     const placeholderModificada = `Digite seu ${props.label}`
+
+    const aoDigitar = (evento) => {
+        props.aoAlterado(evento.target.value)
+    }
+
     return (
         <div className='campo-texto'>
             <label>{ props.label }</label>
-            <input required={props.obrigatorio} placeholder={placeholderModificada}></input>
+            <input value={props.valor} onChange={aoDigitar} required={props.obrigatorio} placeholder={placeholderModificada}></input>
         </div>
     )
 }
