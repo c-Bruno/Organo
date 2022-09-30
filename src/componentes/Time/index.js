@@ -1,25 +1,18 @@
-import Colaborador from '../Colaborador';
+import Colaborador from '../Colaborador'
 import './Time.css'
 
 const Time = (props) => {
+    const css = { backgroundColor: props.corSecundaria }
+
     return (
-        // O JavaScript vai olhar para essa expressão e caso > 0 seja true, ele vai retornar o 
-        // segundo parâmetro da condição. Se ele for falso, o React não vai fará nada.
-        (props.colaboradores.length > 0) &&
-        <section className='time' style={{backgroundColor: props.corSecundaria}}>
-            <h3  style={{borderColor: props.corPrimaria}}>{props.nome}</h3>
+        (props.colaboradores.length > 0) ? <section className='time' style={css}>
+            <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
             <div className='colaboradores'>
-                {props.colaboradores.map(colaborador => 
-                    <Colaborador 
-                        key={colaborador.nome}
-                        nome={colaborador.nome}
-                        cargo={colaborador.cargo}
-                        imagem={colaborador.imagem}
-                    ></Colaborador>
-                )}
+                {props.colaboradores.map( colaborador => <Colaborador corDeFundo={props.corPrimaria} key={colaborador.nome} nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/> )}
             </div>
-        </section>
+        </section> 
+        : ''
     )
 }
 
-export default Time;
+export default Time

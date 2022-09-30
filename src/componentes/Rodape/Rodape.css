@@ -1,0 +1,33 @@
+.rodape {
+    background: #6278F7;
+    height: 200px;
+}
+
+.container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.column{
+    width: calc(100% / 3);
+    /* display: inline-block; */
+    font-size: 18px;
+    color: #fff;
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+.column img {
+    margin: 10px;
+}
+
+.imagem-rede {
+    width: 25px;
+    height: 25px;
+}
+
+.imagem-organo {
+    
+}
